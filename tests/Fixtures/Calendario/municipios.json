@@ -1,0 +1,68 @@
+{
+  "version": "1.0.0",
+  "source": "INE — Relación de municipios y sus códigos por provincias (diccionario26.xlsx, ref. 2026-01-01)",
+  "source_url": "https://www.ine.es/daco/daco42/codmun/diccionario26.xlsx",
+  "count": 6,
+  "municipalities": [
+    {
+      "ine": "02003",
+      "dc": 0,
+      "name": "Albacete",
+      "province": "02",
+      "province_name": "Albacete",
+      "ccaa_ine": "08",
+      "ccaa_iso": "ES-CM",
+      "ccaa_name": "Castilla-La Mancha"
+    },
+    {
+      "ine": "08019",
+      "dc": 3,
+      "name": "Barcelona",
+      "province": "08",
+      "province_name": "Barcelona",
+      "ccaa_ine": "09",
+      "ccaa_iso": "ES-CT",
+      "ccaa_name": "Cataluña"
+    },
+    {
+      "ine": "28079",
+      "dc": 6,
+      "name": "Madrid",
+      "province": "28",
+      "province_name": "Madrid",
+      "ccaa_ine": "13",
+      "ccaa_iso": "ES-MD",
+      "ccaa_name": "Comunidad de Madrid"
+    },
+    {
+      "ine": "30030",
+      "dc": 8,
+      "name": "Murcia",
+      "province": "30",
+      "province_name": "Murcia",
+      "ccaa_ine": "14",
+      "ccaa_iso": "ES-MC",
+      "ccaa_name": "Región de Murcia"
+    },
+    {
+      "ine": "40194",
+      "dc": 5,
+      "name": "Segovia",
+      "province": "40",
+      "province_name": "Segovia",
+      "ccaa_ine": "07",
+      "ccaa_iso": "ES-CL",
+      "ccaa_name": "Castilla y León"
+    },
+    {
+      "ine": "46250",
+      "dc": 8,
+      "name": "València",
+      "province": "46",
+      "province_name": "Valencia/València",
+      "ccaa_ine": "10",
+      "ccaa_iso": "ES-VC",
+      "ccaa_name": "Comunitat Valenciana"
+    }
+  ]
+}

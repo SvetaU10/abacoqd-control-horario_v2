@@ -1,0 +1,103 @@
+@layer tokens {
+    /* Tokens visuales de la guía de estilos de Ábaco. */
+    :root {
+        color-scheme: light;
+        --marca-primario: #087F8C;
+        --marca-primario-oscuro: #066A75;
+        --marca-secundario: #088C8C;
+        --marca-turquesa: #18B7B0;
+        --marca-acento: #7ABFBF;
+        --marca-suave: #B0D9D9;
+        --marca-cian: #39C6E6;
+        --marca-lima: #B7F34A;
+        --fondo-claro: #F5F8F8;
+        --fondo-niebla: #E8EFF0;
+        --fondo-neutro: #F2F2F2;
+        --fondo-oscuro: #061B20;
+        --fondo-oscuro-elevado: #082D33;
+        --fondo-oscuro-fuerte: #083F46;
+        --fondo-tinta: #07111A;
+        --estado-trabajando: #087F8C;
+        --estado-en-pausa: #39C6E6;
+        --estado-fuera-de-jornada: #5B6B70;
+        --estado-pendiente: #F2B33D;
+        --estado-aprobado: #2E7D32;
+        --estado-aprobado-oscuro: #256628;
+        --estado-error-tecnico: #C0392B;
+        --estado-error-tecnico-oscuro: #9F2F24;
+        --estado-guardado: #B7F34A;
+        --fuente: "Poppins", "Segoe UI", sans-serif;
+        --texto-estado: 32px;
+        --texto-titulo: 24px;
+        --texto-ficha: 20px;
+        --texto-lista: 14px;
+        --texto-secundario: 12px;
+        --peso-normal: 400;
+        --peso-boton: 500;
+        --peso-titulo: 600;
+        --e1: 4px;
+        --e2: 8px;
+        --e3: 12px;
+        --e4: 16px;
+        --e6: 24px;
+        --e8: 32px;
+        --radio: 8px;
+        --radio-sm: 4px;
+        --alto-control: 44px;
+        --alto-boton: 48px;
+        --alto-fila: 56px;
+        --alto-navegacion: 56px;
+        --alto-barra: 64px;
+        --sombra-ficha: 0 12px 24px rgba(7, 17, 26, 0.16);
+        --fondo: #F5F8F8;
+        --superficie: #FFFFFF;
+        --superficie-2: #E8EFF0;
+        --texto: #07111A;
+        --texto-2: #5B6B70;
+        --enlace: #066A75;
+        --enlace-hover: #044F58;
+        --aviso-texto: #8A5A00;
+        --error-texto: #C0392B;
+        --cifra: #066A75;
+        --foco: #066A75;
+        --tinta: #07111A;
+        --borde-campo: #5B6B70;
+        --linea: #E8EFF0;
+        /* Tinta secundaria sobre selección: 4.60:1; enlace: 5.23:1. */
+        --seleccion: #DDEDED;
+        --superficie-hover: #E8EFF0;
+        --placa-icono: transparent;
+        --fondo-pagina: var(--fondo);
+        --fondo-ventana: var(--superficie);
+        --texto-suave: var(--texto-2);
+        --boton-secundario-texto: var(--texto);
+        --casilla-hoy: var(--enlace);
+    }
+
+    html[data-tema="oscuro"] {
+        color-scheme: dark;
+        --fondo: #061B20;
+        --superficie: #082D33;
+        --superficie-2: #083F46;
+        --texto: #F5F8F8;
+        --texto-2: #B0D9D9;
+        --enlace: #18B7B0;
+        --enlace-hover: #B0D9D9;
+        --aviso-texto: #F2D48A;
+        --error-texto: #F1A7A0;
+        --cifra: #18B7B0;
+        --foco: #18B7B0;
+        --tinta: #07111A;
+        --borde-campo: #7ABFBF;
+        --linea: #083F46;
+        --seleccion: #083F46;
+        /* Enlace sobre hover/selección: 4.66:1; texto: 10.87:1. */
+        --superficie-hover: #083F46;
+        --placa-icono: #FFFFFF;
+        --fondo-pagina: var(--fondo);
+        --fondo-ventana: var(--superficie);
+        --texto-suave: var(--texto-2);
+        --boton-secundario-texto: var(--texto);
+        --casilla-hoy: var(--enlace);
+    }
+}

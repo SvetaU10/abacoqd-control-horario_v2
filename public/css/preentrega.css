@@ -1,0 +1,133 @@
+@layer pantallas {
+    body { font-variant-numeric: tabular-nums; }
+    .nav-cerrar, .nav-fondo { display: none; }
+    .cabecera-plegar { min-width: 44px; min-height: 44px; background: transparent; }
+    :is(a, button, summary, input, select, textarea):focus-visible { outline: 2px solid var(--foco); outline-offset: 3px; }
+    ::selection { background: var(--enlace); color: var(--fondo); }
+    input::placeholder, textarea::placeholder { color: var(--texto-2); opacity: 1; }
+    select option { background: var(--superficie); color: var(--texto); }
+    select option:checked { background: var(--seleccion); color: var(--texto); }
+    :is(input, select, textarea):not(:disabled):hover { border-color: var(--enlace); }
+    :is(.boton-secundario, .boton-hoy-linea, .registro-csv, .registro-filtrar summary, .tickets-filtro, .tipo-jornada, .lateral-salir, .calendario-archivo-boton) { border-color: var(--borde-campo); }
+    .boton-secundario:not(:disabled):is(:hover, :focus-visible),
+    .franja .boton-secundario:not(:disabled):is(:hover, :focus-visible) { background: var(--superficie-hover); color: var(--texto); border-color: var(--enlace); }
+    :is(.menu a, .registro-tabs a, .calendario-vistas a):not([aria-current]):hover { background: var(--superficie-hover); color: var(--texto); box-shadow: inset 0 0 0 1px var(--borde-campo); }
+    :is(.registro-tabs a, .calendario-vistas a, .calendario-vistas span)[aria-current="page"] { box-shadow: inset 0 -3px 0 var(--enlace); }
+    .tipo-jornada-activa, .tipo-jornada:has(input:checked) { border-color: var(--enlace); box-shadow: inset 0 0 0 1px var(--enlace); }
+    .rango-dias button:not(:disabled):not(.rango-elegido):is(:hover, :focus-visible) { background: var(--superficie-hover); color: var(--texto); box-shadow: inset 0 0 0 1px var(--borde-campo); }
+    .ventana-incidencia textarea:focus-visible { outline: 2px solid var(--foco); outline-offset: 3px; border-color: var(--foco); }
+    html[data-tema] .calendario-pagina .calendario-mes-card a.casilla:focus-visible { outline: 3px solid var(--foco); outline-offset: 3px; }
+    .mensaje-exito { margin: 0 0 20px; padding: 12px 16px; border-left: 3px solid var(--estado-aprobado); background: color-mix(in srgb, var(--estado-aprobado) 9%, var(--superficie)); color: var(--texto); border-radius: 6px; }
+    .franja.franja-info { color: var(--texto); background: var(--superficie-2); border: 1px solid var(--linea); border-left: 3px solid var(--enlace); }
+    .franja.franja-info::before { display: none; }
+    .franja-info .franja-linea p { font-weight: 400; }
+    .cuerpo:has(.gestion-pagina) { height: auto; min-height: 100dvh; overflow: visible; }
+    .pagina:has(.gestion-pagina) { width: min(1160px, calc(100% - 48px)); padding-block: 28px 40px; overflow: visible; }
+    .gestion-pagina { gap: 24px; }
+    .gestion-cabeza { gap: 7px; }
+    .gestion-cabeza h1 { font-size: clamp(26px, 3vw, 32px); letter-spacing: -.025em; }
+    .gestion-intro { margin: 0; color: var(--texto-2); }
+    .gestion-tablero { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 20px; flex: 0 0 auto; }
+    .gestion-tarjeta { padding: 22px; gap: 20px; border-top: 1px solid var(--linea); border-radius: 12px; box-shadow: none; overflow: visible; }
+    .gestion-tarjeta-vacaciones { grid-column: 1 / -1; }
+    .gestion-tarjeta-vacaciones:not(:has(.gestion-solicitud)) { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 16px; }
+    .gestion-tarjeta-vacaciones:not(:has(.gestion-solicitud)) .gestion-vacio { display: flex; min-height: 40px; gap: 10px; padding: 0; margin: 0; text-align: left; }
+    .gestion-tarjeta-vacaciones:not(:has(.gestion-solicitud)) .gestion-tarjeta-cuerpo { flex: 0; }
+    .gestion-tarjeta-cuerpo { overflow: visible; max-height: none; }
+    .gestion-tarjeta-cabeza h2 a { color: inherit; text-decoration: none; }
+    .gestion-tarjeta-cabeza h2 a:hover { color: var(--enlace); }
+    .gestion-tarjeta-sedes > .gestion-anadir-sede { order: 3; }
+    .gestion-tarjeta-sedes > .cal-csv-alternativa { order: 4; margin: 0; border-top: 1px solid var(--linea); padding-top: 14px; }
+    .gestion-anadir-sede { border-top: 1px solid var(--linea); padding-top: 14px; }
+    .gestion-anadir-sede > summary { color: var(--enlace); cursor: pointer; min-height: 36px; padding-block: 7px; }
+    .gestion-anadir-sede .gestion-sede-alta { margin-top: 14px; }
+    .gestion-sedes-lista > li { flex-direction: row; align-items: center; gap: 12px; flex-wrap: wrap; padding-block: 14px; }
+    .gestion-sede-calendario { color: var(--enlace); }
+    .gestion-sede { flex: 1 1 12rem; }
+    .gestion-sedes-lista > li > details { flex: 0 1 auto; }
+    .gestion-sedes-lista > li > details[open] { flex-basis: 100%; }
+    .gestion-sedes-lista > li > details > summary { min-height: 40px; display: flex; align-items: center; cursor: pointer; color: var(--enlace); }
+    .gestion-sedes-lista > li > details[open] > summary { margin-bottom: 12px; }
+    .cal-gestion-acceso { padding: 0; margin: 0; border: 0; background: transparent; }
+    .paginacion { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 16px; }
+    .paginacion > span { color: var(--texto-2); font-size: 12px; }
+    .cobertura { display: flex; flex-direction: column; gap: 10px; }
+    .cobertura-barra { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .cobertura-barra h3 { margin: 0; font-size: 14px; font-weight: 600; }
+    .cobertura-sede { margin: 0; }
+    .cobertura-sede select { width: auto; max-width: 16rem; min-height: 36px; padding: 6px 10px; border: 1px solid var(--borde-campo); border-radius: var(--radio-sm); background: var(--superficie); color: var(--texto); font: inherit; }
+    .cobertura-sede-nombre { margin: 0; color: var(--texto-2); font-size: 13px; }
+    .cobertura-minimo { margin-left: auto; }
+    .cobertura-minimo label { display: flex; align-items: center; gap: 8px; color: var(--texto-2); font-size: 13px; }
+    .cobertura-minimo input { width: 4.5rem; min-height: 36px; padding: 6px 8px; border: 1px solid var(--borde-campo); border-radius: var(--radio-sm); background: var(--superficie); color: var(--texto); font: inherit; }
+    .cobertura-ayuda, .cobertura-leyenda { margin: 0; color: var(--texto-2); font-size: 12px; }
+    .cobertura-tira { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 4px; scroll-behavior: smooth; }
+    .cobertura-semana { display: flex; flex-direction: column; gap: 4px; flex: 0 0 auto; }
+    .cobertura-mes { min-height: 14px; color: var(--texto-2); font-size: 11px; letter-spacing: .01em; }
+    .cobertura-dias { display: flex; gap: 3px; }
+    .cobertura-dia { position: relative; display: grid; place-items: center; width: 28px; height: 34px; border-radius: 6px; color: var(--texto); line-height: 1; }
+    .cobertura-letra { font-size: 9px; font-weight: 600; opacity: .7; }
+    .cobertura-numero { font-size: 12px; font-weight: 600; }
+    .cobertura-dia.cobertura-ok, .cobertura-muestra.cobertura-ok { background: color-mix(in srgb, var(--estado-aprobado) 28%, var(--superficie)); }
+    .cobertura-dia.cobertura-justo, .cobertura-muestra.cobertura-justo { background: color-mix(in srgb, var(--estado-pendiente) 55%, var(--superficie)); }
+    .cobertura-dia.cobertura-corto, .cobertura-muestra.cobertura-corto { background: color-mix(in srgb, var(--estado-error-tecnico) 32%, var(--superficie)); }
+    .cobertura-dia.cobertura-vacia { background: var(--superficie-2); color: var(--texto-2); }
+    .cobertura-dia.tiene-pendiente::after, .cobertura-muestra.tiene-pendiente::after { content: ""; position: absolute; right: 3px; bottom: 3px; width: 4px; height: 4px; border-radius: 50%; background: var(--texto); }
+    .cobertura-dia.es-solicitud { box-shadow: inset 0 0 0 2px var(--texto); }
+    .cobertura-leyenda { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
+    .cobertura-muestra { position: relative; width: 14px; height: 14px; border-radius: 4px; }
+    .cobertura-muestra.tiene-pendiente { background: var(--superficie-2); }
+    button.gestion-solicitud-datos { border: 0; background: transparent; color: inherit; font: inherit; text-align: left; padding: 0; cursor: pointer; min-height: 0; }
+    .cobertura-resumen { color: var(--texto-2); font-size: 12px; white-space: normal; }
+    .gestion-solicitud.cobertura-corto { box-shadow: inset 3px 0 0 var(--estado-error-tecnico); }
+    .gestion-solicitud.cobertura-justo { box-shadow: inset 3px 0 0 var(--estado-pendiente); }
+    .gestion-solicitud.cobertura-ok { box-shadow: inset 3px 0 0 var(--estado-aprobado); }
+    .gestion-solicitud[data-abierta] { background: var(--superficie-2); }
+    .cobertura-detalle { grid-column: 1 / -1; }
+    .cobertura-detalle ul { display: grid; gap: 4px; margin: 2px 0 0; padding: 0; list-style: none; }
+    .cobertura-detalle li { padding: 3px 0 3px 10px; border-left: 2px solid var(--linea); color: var(--texto-2); font-size: 12px; }
+    .cobertura-detalle li.cobertura-corto { border-left-color: var(--estado-error-tecnico); }
+    .cobertura-detalle li.cobertura-justo { border-left-color: var(--estado-pendiente); }
+    .cobertura-detalle li.cobertura-ok { border-left-color: var(--estado-aprobado); }
+    @media (max-width: 800px) {
+        .cobertura-barra { flex-wrap: wrap; }
+        .cobertura-minimo { margin-left: 0; }
+    }
+    @media (min-width: 801px) {
+        body.nav-plegada .lateral { width: 72px; flex-basis: 72px; padding: 8px; visibility: visible; overflow-y: auto; border-right: 1px solid var(--linea); }
+        body.nav-plegada .lateral .marca-logo { justify-content: center; margin-inline: -8px; padding-inline: 8px; }
+        body.nav-plegada .lateral .marca-logo > span,
+        body.nav-plegada .lateral .lateral-kicker,
+        body.nav-plegada .lateral .lateral-quien,
+        body.nav-plegada .lateral .lateral-inicial { display: none; }
+        body.nav-plegada .lateral .nav-etiqueta { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+        body.nav-plegada .lateral .menu a { position: relative; justify-content: center; min-height: 48px; padding: 10px; }
+        body.nav-plegada .lateral .lateral-cuenta { justify-content: center; padding-top: 10px; }
+        body.nav-plegada .lateral .aviso-ticket { position: absolute; right: 0; top: 0; font-size: 10px; }
+    }
+    @media (max-width: 1000px) {
+        .gestion-tablero { grid-template-columns: 1fr; }
+        .gestion-tarjeta-vacaciones { grid-column: auto; }
+    }
+    @media (max-width: 800px) {
+        body:has(.lateral) { padding-bottom: 0; }
+        body.nav-abierta { overflow: hidden; }
+        :is(body, body.nav-plegada) .lateral, body.es-jefa .lateral { position: fixed; inset: 0 auto 0 0; width: min(300px, calc(100vw - 44px)); height: 100dvh; min-height: 0; flex-direction: column; padding: 12px; gap: 8px; border: 0; border-right: 1px solid var(--linea); z-index: 32; transform: translateX(-105%); visibility: hidden; overflow-y: auto; }
+        body.nav-abierta .lateral, body.nav-abierta.nav-plegada .lateral { transform: translateX(0); visibility: visible; }
+        .nav-fondo:not([hidden]) { display: block; position: fixed; inset: 0; z-index: 31; border: 0; border-radius: 0; background: rgb(7 17 26 / .35); }
+        .lateral .nav-cerrar { display: flex; align-items: center; justify-content: flex-end; gap: 10px; min-height: 44px; padding: 8px; color: var(--texto); background: transparent; border: 0; cursor: pointer; }
+        .nav-cerrar > span { font-size: 24px; line-height: 1; }
+        .lateral .menu, body.es-jefa .lateral .menu { display: flex; flex-direction: column; align-items: stretch; width: 100%; gap: 4px; overflow: visible; }
+        .lateral .menu a, body.es-jefa .lateral .menu a { justify-content: flex-start; flex-direction: row; min-height: 48px; width: auto; padding: 10px 12px; font-size: 14px; border: 0; }
+        .lateral .menu a[aria-current="page"] { border: 0; box-shadow: inset 3px 0 0 var(--enlace); }
+        .lateral .menu svg { flex: 0 0 20px; }
+        .lateral .marca-logo, body.es-jefa .lateral .marca-logo { display: flex; padding-inline: 18px; }
+        .lateral .lateral-kicker, body.es-jefa .lateral .lateral-kicker { display: block; }
+        .lateral .lateral-cuenta, body.es-jefa .lateral .lateral-cuenta { display: flex; }
+        .lateral .menu-pie, body.es-jefa .lateral .menu-pie { display: flex; }
+        body.nav-plegada .cabecera-logo { display: none; }
+        .pagina:has(.gestion-pagina) { width: calc(100% - 32px); padding-top: 24px; }
+        .gestion-tarjeta { padding: 18px; }
+        .gestion-tarjeta-vacaciones:not(:has(.gestion-solicitud)) { grid-template-columns: 1fr; }
+    }
+}

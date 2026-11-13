@@ -1,0 +1,55 @@
+@layer componentes {
+    .boton {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        min-height: var(--alto-control);
+        padding: var(--e3) var(--e4);
+        border: 1px solid transparent;
+        border-radius: var(--radio);
+        font: inherit;
+        font-size: var(--texto-lista);
+        font-weight: var(--peso-boton);
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .boton-principal {
+        min-height: var(--alto-boton);
+        background: var(--marca-primario);
+        color: #fff;
+    }
+
+    .boton-principal:hover,
+    .boton-principal:focus-visible {
+        background: var(--marca-primario-oscuro);
+    }
+
+    .boton-secundario {
+        background: var(--superficie);
+        color: var(--boton-secundario-texto);
+        border-color: var(--borde-campo);
+    }
+
+    .boton:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        gap: var(--e2);
+        margin-top: var(--e4);
+        max-width: 640px;
+    }
+
+    .dialogo {
+        width: min(400px, calc(100% - 32px));
+        padding: var(--e6);
+        border: 1px solid var(--linea);
+        border-radius: var(--radio);
+        background: var(--fondo-ventana);
+        color: var(--texto);
+    }
+
+    .dialogo::backdrop { background: rgba(7, 17, 26, 0.55); }
+}

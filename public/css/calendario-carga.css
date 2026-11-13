@@ -1,0 +1,172 @@
+@layer pantallas {
+    :root {
+        --cal-nacional: #1d4ed8; --cal-autonomico: #92400e; --cal-municipal: #166534;
+        --cal-provincial: #6b21a8; --cal-vacaciones: #9d174d;
+        --cal-fondo-estado: #c8dbff; --cal-tinta-estado: #102a56;
+        --cal-fondo-comunidad: #ffe08a; --cal-tinta-comunidad: #4a3000;
+        --cal-fondo-pueblo: #bce9cd; --cal-tinta-pueblo: #0c3b23;
+        --cal-fondo-provincia: #dec9f5; --cal-tinta-provincia: #3e175f;
+        --cal-fondo-vacaciones: #f6bcd9; --cal-tinta-vacaciones: #570a2b;
+        --cal-fondo-pendiente: #f6e4ec;
+    }
+    html[data-tema="oscuro"] {
+        --cal-nacional: #93c5fd; --cal-autonomico: #fcd34d; --cal-municipal: #86efac;
+        --cal-provincial: #d8b4fe; --cal-vacaciones: #f9a8d4;
+        --cal-fondo-estado: #163b70; --cal-tinta-estado: #eff6ff;
+        --cal-fondo-comunidad: #604207; --cal-tinta-comunidad: #fff6d6;
+        --cal-fondo-pueblo: #124d36; --cal-tinta-pueblo: #e7fff0;
+        --cal-fondo-provincia: #472564; --cal-tinta-provincia: #faf0ff;
+        --cal-fondo-vacaciones: #681d45; --cal-tinta-vacaciones: #fff0f7;
+        --cal-fondo-pendiente: #3d2835;
+    }
+    .cal-leyenda { display: flex; flex-wrap: wrap; gap: 10px 20px; padding: 12px 0; margin: 8px 0 18px; list-style: none; font-size: 13px; }
+    .cal-leyenda li { display: inline-flex; gap: 7px; align-items: center; }
+    .cal-leyenda small { color: var(--texto-2); }
+    .cal-muestra { width: 12px; height: 12px; border-radius: 3px; flex: 0 0 12px; }
+    .cal-muestra-estado { background: var(--cal-nacional); }
+    .cal-muestra-comunidad { background: var(--cal-autonomico); }
+    .cal-muestra-pueblo { background: var(--cal-municipal); }
+    .cal-muestra-provincia { background: var(--cal-provincial); }
+    .cal-muestra-vacaciones { background: var(--cal-vacaciones); }
+    .festivo-ambito-estado, [data-ambito="estado"] { --cal-ambito: var(--cal-nacional); }
+    .festivo-ambito-comunidad, [data-ambito="comunidad"] { --cal-ambito: var(--cal-autonomico); }
+    .festivo-ambito-pueblo, [data-ambito="pueblo"] { --cal-ambito: var(--cal-municipal); }
+    .festivo-ambito-provincia, .festivo-ambito-insular, [data-ambito="provincia"], [data-ambito="insular"] { --cal-ambito: var(--cal-provincial); }
+    .festivo-ambito { color: var(--cal-ambito, var(--texto)); background: color-mix(in srgb, var(--cal-ambito, var(--texto)) 12%, var(--superficie)); }
+    [data-relleno="estado"] { --cal-fondo-dia: var(--cal-fondo-estado); --cal-tinta-dia: var(--cal-tinta-estado); --cal-borde-dia: var(--cal-nacional); }
+    [data-relleno="comunidad"] { --cal-fondo-dia: var(--cal-fondo-comunidad); --cal-tinta-dia: var(--cal-tinta-comunidad); --cal-borde-dia: var(--cal-autonomico); }
+    [data-relleno="pueblo"] { --cal-fondo-dia: var(--cal-fondo-pueblo); --cal-tinta-dia: var(--cal-tinta-pueblo); --cal-borde-dia: var(--cal-municipal); }
+    [data-relleno="provincia"], [data-relleno="insular"] { --cal-fondo-dia: var(--cal-fondo-provincia); --cal-tinta-dia: var(--cal-tinta-provincia); --cal-borde-dia: var(--cal-provincial); }
+    [data-relleno="vacaciones"] { --cal-fondo-dia: var(--cal-fondo-vacaciones); --cal-tinta-dia: var(--cal-tinta-vacaciones); --cal-borde-dia: var(--cal-vacaciones); }
+    [data-relleno="pendiente"] { --cal-fondo-dia: var(--cal-fondo-pendiente); --cal-tinta-dia: var(--cal-tinta-vacaciones); --cal-borde-dia: var(--cal-vacaciones); --cal-estilo-borde: dashed; }
+    .calendario-pagina .casilla[data-relleno="vacaciones"][data-ambito]:not([data-ambito=""]) { --cal-borde-dia: var(--cal-ambito); }
+    .calendario-pagina .calendario-mes-card .casilla[data-relleno]:not([data-relleno=""]),
+    .calendario-pagina .calendario-anual-rejilla .calendario-anual-dia[data-relleno]:not([data-relleno=""]) {
+        background: var(--cal-fondo-dia);
+        background-image: none;
+        color: var(--cal-tinta-dia);
+        border: 2px var(--cal-estilo-borde, solid) var(--cal-borde-dia);
+        box-shadow: none;
+    }
+    .calendario-pagina .calendario-mes-card .casilla .casilla-etiqueta {
+        padding: 0; background: none; background-image: none; border-radius: 0; color: inherit;
+        font-size: 14px; line-height: 1.4; white-space: normal; overflow-wrap: anywhere;
+    }
+    .calendario-pagina .calendario-mes-card .casilla .cal-dia-nombre {
+        display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2;
+        max-height: 2.8em; overflow: hidden; hyphens: none; word-break: normal; overflow-wrap: normal;
+    }
+    .calendario-pagina .cal-dia-numero { font-size: 18px; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .calendario-pagina .calendario-mes-card .casilla-hoy[data-relleno]:not([data-relleno=""]),
+    .calendario-pagina .calendario-anual-rejilla .calendario-anual-hoy[data-relleno]:not([data-relleno=""]) { outline: 2px solid currentColor; outline-offset: -5px; }
+    .cal-vigencias { margin: 0 0 18px; }
+    .cal-vigencias-titulo { margin: 0 0 6px; font-size: 12px; font-weight: 500; color: var(--texto-2); }
+    .cal-vigencias-lista { display: flex; flex-wrap: wrap; gap: 8px 12px; margin: 0; padding: 0; list-style: none; }
+    .cal-vigencias-lista > li { min-width: 0; max-width: 100%; }
+    .cal-vigencias details { max-width: 34rem; border: 1px solid var(--linea); border-radius: var(--radio-sm); font-size: 13px; }
+    .cal-vigencias details > summary { min-height: 44px; padding: 10px 12px; cursor: pointer; }
+    .cal-vigencias summary strong { font-weight: 500; }
+    .cal-vigencias summary span { margin-left: 12px; color: var(--texto-2); white-space: nowrap; }
+    .cal-vigencias details > p, .cal-vigencias details > ul { margin-inline: 12px; }
+    .cal-vigencias details[open] { padding-bottom: 8px; }
+    .cal-fuentes-lista { padding-left: 18px; font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
+    .cal-fuentes-lista li + li { margin-top: 10px; }
+    .cal-vigencia-form { grid-column: 1 / -1; display: flex; align-items: center; flex-wrap: wrap; gap: 12px 22px; border: 1px solid var(--linea); border-radius: var(--radio-sm); padding: 12px 16px; margin: 0; }
+    .cal-vigencia-form legend { font-size: 14px; padding: 0 6px; }
+    .cal-carga-form .cal-vigencia-form label { display: flex; align-items: center; gap: 8px; min-height: 44px; }
+    .cal-carga-form .cal-vigencia-form input[type="radio"] { width: 18px; height: 18px; min-height: 18px; margin: 0; }
+    .cal-vigencia-form .cal-ayuda { flex-basis: 100%; margin: 0; }
+    .cal-carga-form > .cal-vigencia-form + button { grid-column: 1 / -1; margin-top: 0; justify-self: start; }
+    .cal-carga-cabeza, .cal-carga-resultado > header, .cal-activo-cabeza {
+        display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 20px;
+    }
+    .cal-carga-cabeza h1 { margin: 4px 0 10px; }
+    .cal-carga-cabeza .secundario { max-width: 700px; }
+    .cal-carga-panel { padding: 20px; margin: 18px 0; background: var(--superficie); border: 1px solid var(--linea); border-radius: var(--radio); }
+    .cal-carga-panel h2 { margin: 0 0 14px; font-size: 20px; }
+    .cal-carga-panel > p { max-width: 68ch; margin: 10px 0; line-height: 1.6; }
+    .cal-carga-form { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 16px; align-items: start; }
+    .cal-form-campo { display: grid; gap: 6px; }
+    .cal-carga-form label { display: grid; gap: 6px; font-size: 14px; font-weight: 500; }
+    .cal-carga-form input { width: 100%; min-height: 48px; padding: 10px 12px; border: 1px solid var(--borde-campo); border-radius: var(--radio-sm); background: var(--superficie); color: var(--texto); font: inherit; }
+    .cal-carga-form input::placeholder { color: var(--texto-2); opacity: 1; }
+    .cal-carga-form input[type="radio"], .cal-revision input { accent-color: var(--enlace); }
+    .cal-carga-form > button { margin-top: 0; white-space: nowrap; }
+    .cal-carga-form input:disabled { opacity: .65; }
+    .cal-error { margin: 4px 0 0; padding-left: 8px; border-left: 3px solid var(--cal-autonomico); font-size: 13px; line-height: 1.5; color: var(--texto); }
+    .sede-calendario-dialogo { width: min(420px, calc(100vw - 32px)); }
+    .sede-calendario-dialogo h2 { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+    .sede-calendario-fecha label { display: flex; align-items: center; gap: 12px; margin: 0; font-weight: 500; }
+    .sede-calendario-fecha input[type="date"] { width: auto; flex: 1; min-width: 11rem; }
+    .sede-calendario-fecha .cal-ayuda { margin: 10px 0 0; }
+    .sede-calendario-acciones { display: flex; justify-content: flex-end; gap: 8px; margin-top: 18px; }
+    .cal-ayuda { color: var(--texto-2); font-size: 13px; line-height: 1.6; margin: 8px 0; }
+    .cal-carga-progreso { grid-column: 1 / -1; }
+    .cal-municipio { position: relative; min-width: 0; }
+    .cal-municipio > label { margin-bottom: 6px; }
+    .cal-municipio-opciones { position: absolute; top: 80px; inset-inline: 0; max-height: 280px; overflow-y: auto; z-index: 10; background: var(--superficie); border: 1px solid var(--borde-campo); border-radius: var(--radio-sm); }
+    .cal-municipio-opciones button { display: block; width: 100%; min-height: 44px; padding: 10px 12px; text-align: left; border: 0; border-bottom: 1px solid var(--linea); background: var(--superficie); color: var(--texto); font: inherit; }
+    .cal-municipio-opciones button:hover { background: var(--superficie-hover); box-shadow: inset 0 0 0 1px var(--borde-campo); }
+    .cal-municipio-opciones button[aria-selected="true"] { background: var(--seleccion); box-shadow: inset 3px 0 0 var(--enlace); }
+    .cal-cambiar-centro { margin-top: 18px; padding-top: 15px; border-top: 1px solid var(--linea); }
+    .cal-cambiar-centro nav { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 12px; }
+    .cal-cambiar-centro nav a[aria-current="page"] { font-weight: 600; }
+    .cal-carga-panel summary { min-height: 44px; padding: 8px 0; cursor: pointer; }
+    .cal-carga-panel.cal-secundario { padding-block: 8px; }
+    .cal-detalle { margin-top: 12px; color: var(--texto-2); font-size: 13px; }
+    .cal-revision-panel > summary { color: var(--enlace); font-weight: 500; }
+    .cal-fechas-guardadas > summary { font-size: 14px; }
+    .cal-carga-panel :is(input, button, a, summary):focus-visible,
+    .cal-tabla-contenedor:focus-visible,
+    .cal-vigencias summary:focus-visible,
+    .calendario-pagina :is(a, button, summary):focus-visible { outline: 3px solid var(--foco); outline-offset: 3px; }
+    .cal-carga-ambitos { display: flex; flex-wrap: wrap; gap: 12px 28px; padding: 14px 0; border-block: 1px solid var(--linea); }
+    .cal-carga-ambitos strong { margin-left: 8px; color: var(--cifra); }
+    .cal-tabla-contenedor { overflow-x: auto; }
+    .cal-carga-tabla { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .cal-carga-tabla th, .cal-carga-tabla td { padding: 12px 10px; text-align: left; border-bottom: 1px solid var(--linea); vertical-align: top; }
+    .cal-carga-tabla th { color: var(--texto-2); font-weight: 500; }
+    .cal-carga-tabla td:first-child { white-space: nowrap; }
+    .cal-carga-tabla { font-variant-numeric: tabular-nums; }
+    .cal-revision { display: flex; gap: 12px; align-items: start; margin: 18px 0; }
+    .cal-revision input { min-width: 20px; width: 20px; height: 20px; }
+    .cal-gestion-acceso { padding: 18px 22px; }
+    .cal-gestion-acceso p { margin: 0 0 14px; color: var(--texto-2); font-size: 14px; }
+    .cal-csv-alternativa { padding: 12px 22px; border-top: 1px solid var(--linea); }
+    .cal-csv-alternativa > summary { min-height: 44px; padding: 8px 0; cursor: pointer; }
+    .gestion-sede-calendario { font-size: 13px; min-height: 44px; display: inline-flex; align-items: center; }
+    .calendario-pagina .calendario-anual { grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+    .calendario-pagina .calendario-anual-rejilla .calendario-anual-dia { min-height: 36px; font-size: 16px; font-weight: 500; font-variant-numeric: tabular-nums; }
+    .cal-anual-ausencias { margin: 10px 0 0; font-size: 12px; line-height: 1.5; color: var(--texto-2); }
+    .cal-anual-eventos { display: grid; gap: 8px; padding: 0; margin: 12px 0 0; list-style: none; }
+    .cal-anual-eventos li { display: grid; grid-template-columns: 1.5rem minmax(0, 1fr); gap: 8px; font-size: 12px; line-height: 1.4; }
+    .cal-anual-eventos time { color: var(--texto-2); font-variant-numeric: tabular-nums; }
+    .cal-anual-eventos li > div { display: grid; justify-items: start; gap: 3px; min-width: 0; overflow-wrap: anywhere; }
+    .cal-anual-eventos .cal-anual-tipo { font-size: 10px; }
+    .calendario-pagina .calendario-mes-card .casilla { min-width: 0; }
+    .calendario-pagina .casilla-etiqueta-festivo { white-space: normal; overflow-wrap: anywhere; }
+    .calendario-pagina .mes-flecha, .calendario-pagina .calendario-anio > a { min-width: 44px; min-height: 44px; }
+    @media (max-width: 900px) {
+        .cal-carga-form { grid-template-columns: 110px minmax(0, 1fr); }
+        .cal-carga-form > button { margin-top: 0; grid-column: 1 / -1; justify-self: start; }
+    }
+    @media (max-width: 600px) {
+        .cal-carga-cabeza, .cal-activo-cabeza { align-items: start; flex-direction: column; }
+        .cal-carga-panel { padding: 18px; }
+        .cal-carga-form { grid-template-columns: 1fr; }
+        .cal-carga-form > button { justify-self: stretch; }
+        .cal-carga-form input { font-size: 16px; }
+        .cal-carga-tabla { min-width: 400px; }
+        .cal-vigencia-form { gap: 6px 14px; padding: 8px 12px; }
+        .cal-vigencias-lista > li { flex-basis: 100%; }
+        .cal-vigencias details { max-width: none; }
+        .calendario-pagina .calendario-mes-card .casilla { min-height: 64px; padding: 6px 4px; align-items: center; justify-content: center; }
+        .calendario-pagina .calendario-mes-card .casilla .casilla-etiqueta { font-size: 12px; }
+        .calendario-pagina .calendario-mes-card .casilla .cal-dia-nombre {
+            position: absolute; width: 1px; height: 1px; max-height: none; padding: 0; margin: -1px;
+            display: block; -webkit-line-clamp: unset; line-clamp: unset; overflow: hidden;
+            clip-path: inset(50%); white-space: nowrap; border: 0;
+        }
+        .calendario-pagina .cal-dia-numero { font-size: 16px; }
+    }
+}

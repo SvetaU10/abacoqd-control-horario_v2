@@ -1,0 +1,21 @@
+* text=auto eol=lf
+
+*.blade.php diff=html
+*.css diff=css
+*.html diff=html
+*.md diff=markdown
+*.php diff=php
+
+# Conservar los bytes de las referencias descargadas y los avisos de terceros.
+/database/data/*.json -text -whitespace
+/tests/Fixtures/** -text -whitespace
+/public/fonts/OFL.txt -text -whitespace
+
+# Los archivos de distribución conservan las pruebas y las guías de instalación.
+/.claude export-ignore
+/.codex export-ignore
+/.nexarca export-ignore
+/.mcp.json export-ignore
+/AGENTS.md export-ignore
+/CLAUDE.md export-ignore
+/boost.json export-ignore

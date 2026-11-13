@@ -1,0 +1,204 @@
+{
+  "schema": "https://festivos.io/v1/schema/municipio.json",
+  "version": "1.0.0",
+  "year": 2026,
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "festivos.io — CC BY 4.0",
+  "homepage": "https://festivos.io",
+  "last_updated": "2026-07-08T21:02:08Z",
+  "disclaimer": "Datos orientativos. No sustituyen a las fuentes oficiales (BOE, boletines autonómicos, bandos municipales): comprueba la fuente de cada festivo antes de tomar decisiones jurídicas o laborales.",
+  "municipality": {
+    "ine": "30030",
+    "name": "Murcia",
+    "province": {
+      "ine": "30",
+      "name": "Murcia"
+    },
+    "ccaa": {
+      "code": "ES-MC",
+      "name": "Región de Murcia"
+    }
+  },
+  "holidays": [
+    {
+      "date": "2026-01-01",
+      "name": {
+        "es": "Año Nuevo"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": false
+    },
+    {
+      "date": "2026-01-06",
+      "name": {
+        "es": "Epifanía del Señor"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": true
+    },
+    {
+      "date": "2026-03-19",
+      "name": {
+        "es": "San José"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": true
+    },
+    {
+      "date": "2026-04-02",
+      "name": {
+        "es": "Jueves Santo"
+      },
+      "level": "national",
+      "type": "movable",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": true
+    },
+    {
+      "date": "2026-04-03",
+      "name": {
+        "es": "Viernes Santo"
+      },
+      "level": "national",
+      "type": "movable",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": false
+    },
+    {
+      "date": "2026-04-07",
+      "name": {
+        "es": "Bando de la Huerta"
+      },
+      "level": "local",
+      "type": "fixed",
+      "source": {
+        "ref": "Región de Murcia — Calendario laboral (BORM)",
+        "url": "https://www.borm.es/services/anuncio/ano/2025/numero/3546/txt?id=837607"
+      }
+    },
+    {
+      "date": "2026-05-01",
+      "name": {
+        "es": "Fiesta del Trabajo"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": false
+    },
+    {
+      "date": "2026-06-09",
+      "name": {
+        "es": "Día de la Región de Murcia"
+      },
+      "level": "regional",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      }
+    },
+    {
+      "date": "2026-08-15",
+      "name": {
+        "es": "Asunción de la Virgen"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": false
+    },
+    {
+      "date": "2026-09-15",
+      "name": {
+        "es": "Romería de la Virgen de la Fuensanta"
+      },
+      "level": "local",
+      "type": "fixed",
+      "source": {
+        "ref": "Región de Murcia — Calendario laboral (BORM)",
+        "url": "https://www.borm.es/services/anuncio/ano/2025/numero/3546/txt?id=837607"
+      }
+    },
+    {
+      "date": "2026-10-12",
+      "name": {
+        "es": "Fiesta Nacional de España"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": false
+    },
+    {
+      "date": "2026-12-07",
+      "name": {
+        "es": "Lunes siguiente al Día de la Constitución Española"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": true
+    },
+    {
+      "date": "2026-12-08",
+      "name": {
+        "es": "Inmaculada Concepción"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": false
+    },
+    {
+      "date": "2026-12-25",
+      "name": {
+        "es": "Natividad del Señor"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": false
+    }
+  ]
+}

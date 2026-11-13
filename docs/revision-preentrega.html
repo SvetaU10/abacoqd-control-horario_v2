@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Revisión interna de uso, accesibilidad, calendarios, seguridad y preparación de la entrega de AbacoQD.">
+    <title>AbacoQD · Revisión antes de la entrega</title>
+    <style>
+        :root { color-scheme: light; --fondo:#f4f7f7; --papel:#fff; --texto:#172d32; --suave:#52656a; --linea:#dce6e7; --marca:#066a75; --pendiente:#805009; }
+        * { box-sizing:border-box; }
+        html { scroll-padding-top:20px; }
+        body { margin:0; background:var(--fondo); color:var(--texto); font:15px/1.55 "Segoe UI",system-ui,sans-serif; }
+        a { color:var(--marca); text-underline-offset:3px; }
+        a:focus-visible, summary:focus-visible { outline:3px solid var(--marca); outline-offset:4px; }
+        .saltar { position:absolute; top:-80px; left:16px; background:var(--papel); padding:10px 16px; }
+        .saltar:focus { top:8px; }
+        .documento { max-width:1040px; margin:32px auto; padding:32px 40px; background:var(--papel); border:1px solid var(--linea); }
+        .marca { display:flex; align-items:baseline; justify-content:space-between; gap:16px; color:var(--suave); font-size:13px; }
+        .marca strong { color:var(--marca); font-size:19px; letter-spacing:-.02em; }
+        h1 { margin:22px 0 10px; font-size:32px; line-height:1.15; letter-spacing:-.025em; font-weight:650; text-wrap:balance; }
+        h2 { margin:0 0 12px; font-size:19px; line-height:1.3; font-weight:600; letter-spacing:-.01em; }
+        h3 { margin:0 0 8px; font-size:15px; font-weight:600; }
+        p { margin:0 0 12px; max-width:78ch; text-wrap:pretty; }
+        .intro { color:var(--suave); }
+        .nota-contraste { margin-top:16px; font-size:13px; }
+        nav { display:flex; flex-wrap:wrap; gap:6px 22px; margin:20px 0 4px; font-size:14px; }
+        nav a { min-height:40px; display:inline-flex; align-items:center; }
+        section { padding-top:24px; margin-top:20px; border-top:1px solid var(--linea); }
+        .uso { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; padding:0; margin:0; list-style:none; }
+        .uso p { color:var(--suave); font-size:14px; margin:0; }
+        table { width:100%; border-collapse:collapse; font-size:14px; }
+        caption { text-align:left; color:var(--suave); margin-bottom:10px; font-size:13px; }
+        thead { text-align:left; color:var(--suave); }
+        th,td { padding:11px 12px; border-bottom:1px solid var(--linea); text-align:left; vertical-align:top; overflow-wrap:anywhere; }
+        th:first-child { width:32%; padding-left:0; }
+        th { font-weight:600; }
+        thead th { font-size:12px; font-weight:500; }
+        td:last-child { padding-right:0; }
+        .cierre { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0 18px; }
+        .evidencia { padding:15px 18px; background:var(--fondo); border-left:3px solid var(--marca); }
+        .evidencia h3 { font-size:14px; }
+        .evidencia p { color:var(--marca); font-weight:600; margin:0; font-variant-numeric:tabular-nums; }
+        .notas { margin:0; padding-left:18px; color:var(--suave); font-size:14px; }
+        .notas li + li { margin-top:8px; }
+        .numero, code { font-variant-numeric:tabular-nums; }
+        code { font-size:.92em; }
+        details { margin-top:18px; font-size:13px; color:var(--suave); }
+        summary { min-height:44px; padding-block:10px; cursor:pointer; color:var(--marca); }
+        details ul { padding-left:18px; margin:6px 0; }
+        details li + li { margin-top:8px; }
+        footer { margin-top:26px; padding-top:16px; border-top:1px solid var(--linea); font-size:12px; color:var(--suave); }
+        @media (max-width:700px) {
+            .documento { margin:0; padding:24px 20px; border:0; }
+            h1 { font-size:28px; }
+            .marca { flex-wrap:wrap; gap:4px 16px; }
+            .uso { grid-template-columns:1fr; gap:16px; }
+            .cierre { grid-template-columns:1fr; }
+            th,td { padding:10px 8px; }
+            th:first-child { width:36%; }
+        }
+        @media print {
+            @page { margin:15mm; }
+            body { background:#fff; font-size:10pt; }
+            .documento { max-width:none; margin:0; padding:0; border:0; }
+            .saltar, nav { display:none; }
+            h1 { font-size:23pt; }
+            h2 { font-size:14pt; break-after:avoid; }
+            section { padding-top:14px; margin-top:14px; }
+            tr, .evidencia, .uso li { break-inside:avoid; }
+            thead { display:table-header-group; }
+            a { color:inherit; }
+            footer { margin-top:18px; }
+        }
+    </style>
+</head>
+<body>
+<a class="saltar" href="#contenido">Ir a la revisión</a>
+<main class="documento" id="contenido">
+    <header>
+        <div class="marca"><strong>AbacoQD</strong><span>Control horario · 30 de octubre de 2026</span></div>
+        <h1>Revisión antes de la entrega</h1>
+        <p class="intro">Revisión especializada interna de uso, accesibilidad, calendarios, integridad de datos, seguridad e instalación. Este documento recoge las correcciones realizadas y recoge los resultados de las comprobaciones finales.</p>
+        <nav aria-label="Contenido de la revisión"><a href="#uso">Uso y accesibilidad</a><a href="#datos">Datos y calendarios</a><a href="#operacion">Seguridad y arranque</a><a href="#cierre">Verificación final</a></nav>
+    </header>
+
+    <section id="uso" aria-labelledby="titulo-uso">
+        <h2 id="titulo-uso">Uso y accesibilidad</h2>
+        <ul class="uso">
+            <li><h3>Mensajes que indican qué hacer</h3><p>La carga de festivos muestra un resumen sencillo. El resultado técnico original se conserva en un apartado cerrado, junto con las fuentes y el historial.</p></li>
+            <li><h3>Calendario más fácil de leer</h3><p>Casillas con relleno completo, borde según el tipo y fecha y nombre legibles. La leyenda y las listas conservan el detalle. Los municipios se presentan en periodos compactos.</p></li>
+            <li><h3>Teclado y errores visibles</h3><p>Foco claro, controles amplios y errores unidos al campo. El buscador admite flechas, Intro, Escape y Tab. Volver atrás recupera el botón de carga.</p></li>
+        </ul>
+        <p class="intro nota-contraste">Contraste calculado del texto sobre los nuevos rellenos de las casillas: mínimo <span class="numero">8,84:1</span> en claro y <span class="numero">8,51:1</span> en oscuro. La leyenda, los nombres y el detalle permiten interpretar las fiestas sin depender sólo del color.</p>
+    </section>
+
+    <section id="datos" aria-labelledby="titulo-datos">
+        <h2 id="titulo-datos">Integridad de datos y calendarios</h2>
+        <table>
+            <caption>Correcciones que protegen lo ya registrado.</caption>
+            <thead><tr><th scope="col">Hallazgo</th><th scope="col">Corrección</th></tr></thead>
+            <tbody>
+                <tr><th scope="row">Un traslado cambiaba el calendario del pasado</th><td>Se guarda el historial de sedes de cada persona y se consulta la sede de cada fecha. Las horas, vacaciones y festivos anteriores mantienen su contexto.</td></tr>
+                <tr><th scope="row">Un municipio nuevo sustituía todo el año</th><td>La carga permite indicar desde qué día se aplica: Madrid en enero y Segovia desde febrero, por ejemplo. Los periodos anteriores y los festivos manuales se conservan.</td></tr>
+                <tr><th scope="row">Datos incompletos o municipios ambiguos</th><td>Catálogo local de <span class="numero">8.132 municipios</span>, cotejado con el INE de 2026 sin diferencias en códigos ni nombres. Se distingue entre municipios homónimos. Una consulta fallida o incompleta conserva el calendario válido.</td></tr>
+                <tr><th scope="row">Fechas inválidas provocaban errores 500</th><td>Los filtros y las fechas de inicio se validan antes de utilizarlos. Un rango invertido se limpia con un aviso y la exportación sigue disponible.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="operacion" aria-labelledby="titulo-operacion">
+        <h2 id="titulo-operacion">QA, seguridad y arranque</h2>
+        <table>
+            <caption>Fallos reproducibles revisados y corregidos.</caption>
+            <thead><tr><th scope="col">Hallazgo</th><th scope="col">Corrección</th></tr></thead>
+            <tbody>
+                <tr><th scope="row">Abrir Hoy generaba avisos de meses anteriores</th><td>La recuperación de días sin fichar se limita a los últimos siete días. El histórico que ya existía se conserva y los días se evalúan con su calendario correspondiente.</td></tr>
+                <tr><th scope="row">Respuesta a un ticket cerrado mientras la página seguía abierta</th><td>Al responder se vuelve a leer y bloquear su estado. La respuesta y la reapertura se guardan en la misma transacción, sin perder el mensaje.</td></tr>
+                <tr><th scope="row">Funciones de demostración accesibles fuera de una demo</th><td>Las cuentas y los borrados de prueba requieren una demo local explícita. La demostración queda bloqueada en producción, incluso si se activa su bandera.</td></tr>
+                <tr><th scope="row">El arranque añadía actividad ficticia</th><td>La instalación normal prepara sólo la sede Principal, Madrid. El acceso se crea con una clave elegida y oculta, sin empleados, horarios, vacaciones ni fichajes de ejemplo.</td></tr>
+                <tr><th scope="row">Dependencia MIME vulnerable</th><td>Se aplicó el parche concreto de <code>symfony/mime</code>, de <code>7.4.19</code> a <code>7.4.22</code>, para <a href="https://symfony.com/cve-2026-45070">CVE-2026-45070</a>. La auditoría posterior documentada no devuelve avisos.</td></tr>
+                <tr><th scope="row">Restauraciones incompatibles y listados truncados</th><td>Se comprueban esquema y claves de la copia antes de sustituir la base; un fallo posterior intenta recuperar la copia anterior e informa del resultado. Los tickets tienen paginación real, incluidos los más antiguos.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="cierre" aria-labelledby="titulo-cierre">
+        <h2 id="titulo-cierre">Evidencia y cierre</h2>
+        <p>Hay pruebas de regresión asociadas a estas correcciones. La pasada completa, la construcción y la revisión visual de esta copia han finalizado.</p>
+        <div class="cierre">
+            <div class="evidencia"><h3>Batería completa de pruebas</h3><p id="fullsuite">386 pruebas correctas · 2.433 aserciones. Formato, compilación y plantillas correctos. Auditorías Composer y npm sin avisos.</p></div>
+            <div class="evidencia"><h3>Revisión visual y teclado</h3><p id="visual">Escritorio y móvil de 390 px; claro y oscuro; calendario mensual y anual; menú con teclado, foco y Escape; búsqueda A Coruña y selección con flechas.</p></div>
+        </div>
+        <ul class="notas">
+            <li><strong>Alcance:</strong> la revisión cubre los casos comprobados en esta versión. El cálculo de contraste y la revisión de código no equivalen a una certificación completa de accesibilidad.</li>
+            <li><strong>Calendarios:</strong> la disponibilidad depende de las publicaciones de cada territorio. Los festivos provinciales o insulares sólo se incorporan cuando existen datos aplicables.</li>
+            <li><strong>Operación real:</strong> quedan por comprobar la configuración del servidor, correo, planificador y copias de seguridad del destino. Los turnos rotatorios y el trabajo habitual en fin de semana necesitan un tratamiento específico.</li>
+        </ul>
+        <details>
+            <summary>Referencias y evidencia de la revisión</summary>
+            <ul>
+                <li>Guía de preparación de la entrega: instalación, separación de la demo y parche de seguridad.</li>
+                <li><a href="https://www.ine.es/daco/daco42/codmun/diccionario26.xlsx">Relación oficial de municipios del INE a 1 de enero de 2026</a>: comprobación de los códigos y nombres del catálogo incluido.</li>
+                <li>Pruebas de los flujos: <code>AuditoriaFlujosTest</code>, <code>ArranqueSeguroTest</code>, <code>CalendarioVigenciaHttpTest</code>, <code>CentroMunicipioTest</code>, <code>SistemaEnArchivoTest</code> y <code>TicketTest</code>.</li>
+            </ul>
+        </details>
+    </section>
+    <footer>Documento de revisión de la copia de trabajo. Versión preparada para revisión en un repositorio privado de AbacoQD. El acceso se concede por separado a las personas revisoras.</footer>
+</main>
+</body>
+</html>

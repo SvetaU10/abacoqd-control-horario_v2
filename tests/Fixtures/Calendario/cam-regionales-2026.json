@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "festividad": "Año Nuevo",
+      "año": "2026",
+      "fecha_festivo": "2026-01-01"
+    },
+    {
+      "festividad": "Epifanía del Señor",
+      "año": "2026",
+      "fecha_festivo": "2026-01-06"
+    },
+    {
+      "festividad": "Jueves Santo",
+      "año": "2026",
+      "fecha_festivo": "2026-04-02"
+    },
+    {
+      "festividad": "Viernes Santo",
+      "año": "2026",
+      "fecha_festivo": "2026-04-03"
+    },
+    {
+      "festividad": "Fiesta del Trabajo",
+      "año": "2026",
+      "fecha_festivo": "2026-05-01"
+    },
+    {
+      "festividad": "Fiesta Comunidad de Madrid",
+      "año": "2026",
+      "fecha_festivo": "2026-05-02"
+    },
+    {
+      "festividad": "Asunción de la Virgen",
+      "año": "2026",
+      "fecha_festivo": "2026-08-15"
+    },
+    {
+      "festividad": "Fiesta Nacional de España",
+      "año": "2026",
+      "fecha_festivo": "2026-10-12"
+    },
+    {
+      "festividad": "Todos los Santos",
+      "año": "2026",
+      "fecha_festivo": "2026-11-02"
+    },
+    {
+      "festividad": "Día de la Constitución Española",
+      "año": "2026",
+      "fecha_festivo": "2026-12-07"
+    },
+    {
+      "festividad": "Inmaculada Concepción",
+      "año": "2026",
+      "fecha_festivo": "2026-12-08"
+    },
+    {
+      "festividad": "Natividad del Señor",
+      "año": "2026",
+      "fecha_festivo": "2026-12-25"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+<svg width="266" height="168" viewBox="0 0 266 168" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Logotipo AbacoQD</title>
+  <desc id="desc">Marca vectorial con símbolo A inclinada, líneas de velocidad y colores azul petróleo y verde turquesa.</desc>
+  <defs>
+    <linearGradient id="teal-main" x1="165" y1="155" x2="256" y2="55" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#008C78"/>
+      <stop offset="0.52" stop-color="#00A98E"/>
+      <stop offset="1" stop-color="#04BFA7"/>
+    </linearGradient>
+    <linearGradient id="teal-line" x1="0" y1="112" x2="155" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9FB9BA"/>
+      <stop offset="0.55" stop-color="#6FA6A6"/>
+      <stop offset="1" stop-color="#008C78"/>
+    </linearGradient>
+    <linearGradient id="teal-line-2" x1="50" y1="86" x2="154" y2="86" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9CB6B7"/>
+      <stop offset="0.62" stop-color="#5DA2A0"/>
+      <stop offset="1" stop-color="#008C78"/>
+    </linearGradient>
+    <linearGradient id="dark-main" x1="97" y1="155" x2="231" y2="22" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#07131C"/>
+      <stop offset="1" stop-color="#06101A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Líneas de velocidad: trazadas con proporción fiel a la referencia -->
+  <path d="M115 31L164 28L162 32L160 34L148 33L147 32L135 32L134 31H115Z" fill="url(#teal-line-2)" opacity=".75"/>
+  <path d="M154 45L81 49L150 52Z" fill="#009D8B"/>
+  <path d="M42 60H114" stroke="#A8BDBF" stroke-width="3" stroke-linecap="square"/>
+  <path d="M139 67L80 72L136 74Z" fill="#07131C"/>
+  <path d="M130 84L49 86L126 90Z" fill="url(#teal-line-2)"/>
+  <path d="M121 97H112L111 98H89L96 98L97 99H118L119 100L121 98Z" fill="#009D8B" opacity=".85"/>
+  <path d="M115 108L17 111L112 114Z" fill="url(#teal-line)"/>
+  <path d="M104 124L92 125L91 126H75L74 127H67L82 127L83 128H96L97 129H102L104 126Z" fill="#009D8B" opacity=".9"/>
+  <path d="M95 140L94 139H90L89 140H82L81 141L55 142H68L69 143H92Z" fill="#009D8B"/>
+
+  <!-- Cuerpo verde visible de la A -->
+  <path d="M211 55L187 93L194 108L178 109L165 130H202L214 155H255Z" fill="url(#teal-main)"/>
+
+  <!-- Trazo principal oscuro -->
+  <path d="M231 22H177L97 155H140L208 43L222 41Z" fill="url(#dark-main)"/>
+</svg>

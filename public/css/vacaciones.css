@@ -1,0 +1,237 @@
+/* Panel de vacaciones del año en el calendario personal. Se enlaza desde calendario/index. */
+@layer pantallas {
+    .calendario-pagina > .vacaciones-pedir[hidden],
+    .vacaciones-anio [data-vacaciones-pedir][hidden] {
+        display: none;
+    }
+
+    /* Mientras se eligen fechas la barra queda pegada abajo, a la vista. */
+    .calendario-pagina > .vacaciones-pedir:not([hidden]) {
+        position: sticky;
+        bottom: var(--e3);
+        z-index: 5;
+        box-shadow: var(--sombra-ficha);
+    }
+
+    .vacaciones-aviso {
+        margin: var(--e1) 0 0;
+        font-weight: var(--peso-boton);
+    }
+
+    .vacaciones-aviso:focus {
+        outline: none;
+    }
+
+    .vacaciones-acciones {
+        display: flex;
+        gap: var(--e2);
+    }
+
+    .vacaciones-tick,
+    .vacaciones-equis {
+        font: inherit;
+        font-size: 18px;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    .vacaciones-tick {
+        border: 1px solid var(--marca-primario);
+        background: var(--marca-primario);
+        color: #fff;
+    }
+
+    .vacaciones-tick:hover,
+    .vacaciones-tick:focus-visible {
+        background: var(--marca-primario-oscuro);
+    }
+
+    .vacaciones-equis {
+        border: 1px solid var(--borde-campo);
+        background: var(--fondo-ventana);
+        color: var(--texto);
+    }
+
+    .vacaciones-anio {
+        padding: var(--e4);
+    }
+
+    .calendario-aside > .vacaciones-anio {
+        grid-column: 1 / -1;
+    }
+
+    .vacaciones-anio-cabecera {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--e3);
+        margin: 0 0 var(--e3);
+    }
+
+    .vacaciones-anio-cabecera h2 {
+        margin: 0;
+        font-size: var(--texto-ficha);
+        font-weight: var(--peso-titulo);
+    }
+
+    .vacaciones-anio-cifras {
+        display: grid;
+        margin: 0;
+    }
+
+    .vacaciones-anio-cifras > div {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: var(--e2);
+        padding: var(--e2) 0;
+        border-top: 1px solid var(--linea);
+    }
+
+    .vacaciones-anio-cifras > div:first-child {
+        border-top: 0;
+    }
+
+    .vacaciones-anio-cifras dt {
+        margin: 0;
+        color: var(--texto-2);
+        font-size: var(--texto-lista);
+    }
+
+    .vacaciones-anio-cifras dd {
+        margin: 0;
+        color: var(--cifra);
+        font-size: var(--texto-ficha);
+        font-weight: var(--peso-titulo);
+        font-variant-numeric: tabular-nums;
+        text-align: right;
+    }
+
+    .vacaciones-anio-pendiente {
+        display: block;
+        color: var(--aviso-texto);
+        font-size: var(--texto-secundario);
+        font-weight: var(--peso-boton);
+        line-height: 1.35;
+    }
+
+    .vacaciones-anio-ayuda {
+        margin: var(--e2) 0 0;
+        font-size: var(--texto-secundario);
+    }
+
+    .vacaciones-anio-nota {
+        margin: var(--e3) 0 0;
+        padding: var(--e2) var(--e3);
+        border-left: 3px solid var(--estado-pendiente);
+        border-radius: var(--radio-sm);
+        background: var(--superficie-2);
+        font-size: var(--texto-lista);
+    }
+
+    .vacaciones-anio-listas {
+        display: grid;
+        gap: var(--e4);
+        margin-top: var(--e4);
+        padding-top: var(--e4);
+        border-top: 1px solid var(--linea);
+    }
+
+    .vacaciones-anio-listas h3 {
+        margin: 0 0 var(--e2);
+        font-size: var(--texto-lista);
+        font-weight: var(--peso-titulo);
+    }
+
+    .vacaciones-anio-listas p {
+        margin: 0;
+        font-size: var(--texto-secundario);
+    }
+
+    .vacaciones-anio-lista {
+        display: grid;
+        gap: var(--e2);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .vacaciones-anio-lista li {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        padding-left: var(--e3);
+        border-left: 3px solid var(--cal-vacaciones);
+        font-size: var(--texto-lista);
+        overflow-wrap: anywhere;
+    }
+
+    .vacaciones-anio-lista small {
+        color: var(--texto-2);
+        font-size: var(--texto-secundario);
+    }
+
+    .vacaciones-anio-lista .vacaciones-anio-disfrutado {
+        border-left-color: var(--borde-campo);
+    }
+
+    .vacaciones-anio-lista .vacaciones-anio-espera {
+        border-left-style: dashed;
+    }
+
+    .vacaciones-anio-lista .vacaciones-anio-rechazada {
+        border-left-color: var(--texto-2);
+        color: var(--texto-2);
+    }
+
+    /* Vista anual: el panel ocupa todo el ancho, encima de los meses. */
+    .vacaciones-anio-ancho {
+        margin: 0 0 var(--e4);
+    }
+
+    .vacaciones-anio-ancho .vacaciones-anio-cifras {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: var(--e3);
+    }
+
+    .vacaciones-anio-ancho .vacaciones-anio-cifras > div,
+    .vacaciones-anio-ancho .vacaciones-anio-cifras > div:first-child {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding: var(--e3);
+        border: 1px solid var(--linea);
+        border-radius: var(--radio);
+    }
+
+    .vacaciones-anio-ancho .vacaciones-anio-cifras dd {
+        font-size: var(--texto-titulo);
+        text-align: left;
+    }
+
+    .vacaciones-anio-ancho .vacaciones-anio-listas {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media (max-width: 900px) {
+        .vacaciones-anio-ancho .vacaciones-anio-cifras {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .calendario-aside > .vacaciones-anio .vacaciones-anio-listas {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 600px) {
+        .vacaciones-anio-ancho .vacaciones-anio-cifras {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .vacaciones-anio-ancho .vacaciones-anio-listas,
+        .calendario-aside > .vacaciones-anio .vacaciones-anio-listas {
+            grid-template-columns: 1fr;
+        }
+    }
+}

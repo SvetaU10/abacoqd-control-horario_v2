@@ -1,0 +1,2 @@
+/* Compatibilidad para páginas o integraciones antiguas. */
+@import url("tokens.css") layer(tokens);

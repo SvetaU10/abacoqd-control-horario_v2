@@ -1,0 +1,204 @@
+{
+  "schema": "https://festivos.io/v1/schema/municipio.json",
+  "version": "1.0.0",
+  "year": 2026,
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "festivos.io — CC BY 4.0",
+  "homepage": "https://festivos.io",
+  "last_updated": "2026-07-08T21:02:08Z",
+  "disclaimer": "Datos orientativos. No sustituyen a las fuentes oficiales (BOE, boletines autonómicos, bandos municipales): comprueba la fuente de cada festivo antes de tomar decisiones jurídicas o laborales.",
+  "municipality": {
+    "ine": "40194",
+    "name": "Segovia",
+    "province": {
+      "ine": "40",
+      "name": "Segovia"
+    },
+    "ccaa": {
+      "code": "ES-CL",
+      "name": "Castilla y León"
+    }
+  },
+  "holidays": [
+    {
+      "date": "2026-01-01",
+      "name": {
+        "es": "Año Nuevo"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": false
+    },
+    {
+      "date": "2026-01-06",
+      "name": {
+        "es": "Epifanía del Señor"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": true
+    },
+    {
+      "date": "2026-04-02",
+      "name": {
+        "es": "Jueves Santo"
+      },
+      "level": "national",
+      "type": "movable",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": true
+    },
+    {
+      "date": "2026-04-03",
+      "name": {
+        "es": "Viernes Santo"
+      },
+      "level": "national",
+      "type": "movable",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": false
+    },
+    {
+      "date": "2026-04-23",
+      "name": {
+        "es": "Fiesta de Castilla y León"
+      },
+      "level": "regional",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      }
+    },
+    {
+      "date": "2026-05-01",
+      "name": {
+        "es": "Fiesta del Trabajo"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": false
+    },
+    {
+      "date": "2026-06-29",
+      "name": {
+        "es": "San Pedro"
+      },
+      "level": "local",
+      "type": "fixed",
+      "source": {
+        "ref": "Junta de Castilla y León — Fiestas locales (datos abiertos)",
+        "url": "https://analisis.datosabiertos.jcyl.es/api/explore/v2.1/catalog/datasets/fiestas-locales-calendario-de-fiestas-de-caracter-local/exports/csv?where=fecha_fiesta%3E%3D%272026-01-01%27+and+fecha_fiesta%3C%3D%272026-12-31%27"
+      }
+    },
+    {
+      "date": "2026-08-15",
+      "name": {
+        "es": "Asunción de la Virgen"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": false
+    },
+    {
+      "date": "2026-10-12",
+      "name": {
+        "es": "Fiesta Nacional de España"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": false
+    },
+    {
+      "date": "2026-10-26",
+      "name": {
+        "es": "San Frutos"
+      },
+      "level": "local",
+      "type": "fixed",
+      "source": {
+        "ref": "Junta de Castilla y León — Fiestas locales (datos abiertos)",
+        "url": "https://analisis.datosabiertos.jcyl.es/api/explore/v2.1/catalog/datasets/fiestas-locales-calendario-de-fiestas-de-caracter-local/exports/csv?where=fecha_fiesta%3E%3D%272026-01-01%27+and+fecha_fiesta%3C%3D%272026-12-31%27"
+      }
+    },
+    {
+      "date": "2026-11-02",
+      "name": {
+        "es": "Día siguiente a Todos los Santos"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": true
+    },
+    {
+      "date": "2026-12-07",
+      "name": {
+        "es": "Lunes siguiente al Día de la Constitución Española"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": true
+    },
+    {
+      "date": "2026-12-08",
+      "name": {
+        "es": "Inmaculada Concepción"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": false
+    },
+    {
+      "date": "2026-12-25",
+      "name": {
+        "es": "Natividad del Señor"
+      },
+      "level": "national",
+      "type": "fixed",
+      "source": {
+        "ref": "BOE-A-2025-21667",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+      },
+      "substitutable": false
+    }
+  ]
+}

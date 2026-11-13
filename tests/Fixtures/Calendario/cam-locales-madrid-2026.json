@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "municipio_codigo": "079",
+      "entidad_codigo": "00",
+      "municipio_nombre": "Madrid",
+      "año": "2026",
+      "entidad_nombre": "Madrid",
+      "fecha_festivo": "2026-05-15"
+    },
+    {
+      "municipio_codigo": "079",
+      "entidad_codigo": "00",
+      "municipio_nombre": "Madrid",
+      "año": "2026",
+      "entidad_nombre": "Madrid",
+      "fecha_festivo": "2026-11-09"
+    }
+  ]
+}

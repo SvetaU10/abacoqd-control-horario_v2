@@ -1,0 +1,57 @@
+@import '../../public/css/tokens.css';
+@import '../../public/css/base.css';
+@import '../../public/css/componentes.css';
+@import '../../public/css/pantallas.css';
+@import '../../public/css/calendario-carga.css';
+@import '../../public/css/preentrega.css';
+
+@layer pantallas {
+    /* Solo las filas se desplazan; el pie conserva el ancho de la tarjeta. */
+    .registro-card {
+        overflow: hidden;
+    }
+
+    .registro-tabla {
+        min-width: 0;
+        overflow-x: auto;
+    }
+
+    .registro-tabla > :is(.registro-cabecera, .registro-fila) {
+        /* Mínimos de las seis columnas y sus huecos, más el relleno lateral. */
+        min-width: calc(840px + var(--e4) + var(--e4));
+    }
+
+    /* Estas reglas deben ir después de las columnas de escritorio importadas. */
+    @media (max-width: 900px) {
+        .sistema-resumen {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .sistema-cuerpo {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .sistema-lateral {
+            min-width: 0;
+        }
+    }
+
+    @media (max-width: 720px) {
+        .tickets-pagina:not(.ticket-ficha) .tickets-filtro-linea {
+            flex-wrap: wrap;
+            min-width: 0;
+        }
+
+        .tickets-pagina:not(.ticket-ficha) .tickets-filtro-linea select {
+            flex: 1 1 100%;
+            width: 100%;
+            min-width: 0;
+        }
+    }
+
+    @media (max-width: 520px) {
+        .sistema-resumen {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+}

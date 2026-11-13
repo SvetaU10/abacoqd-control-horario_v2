@@ -1,0 +1,38 @@
+{
+    "version": 1,
+    "anio": 2026,
+    "municipio_ine": "28079",
+    "municipio": "Madrid",
+    "comunidad_codigo": "ES-MD",
+    "verificado_el": "2026-11-06",
+    "fuentes": [
+        {
+            "nombre": "Ayuntamiento de Madrid · calendario laboral oficial 2026",
+            "url": "https://www.madrid.es/portales/munimadrid/es/Calendario-oficial-laboral-y-de-dias-inhabiles-y-festivos-2026-para-Madrid/?vgnextchannel=a68fed8a96b06010VgnVCM100000dc0ca8c0RCRD&vgnextoid=b59770d1c3589910VgnVCM100000891ecb1aRCRD"
+        },
+        {
+            "nombre": "BOE-A-2025-21667 · fechas y clasificación de fiestas generales",
+            "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667"
+        },
+        {
+            "nombre": "Comunidad de Madrid · calendario laboral y fiestas locales 2026",
+            "url": "https://www.comunidad.madrid/empleo/calendario-laboral-comunidad-madrid-municipios"
+        }
+    ],
+    "festivos": [
+        { "date": "2026-01-01", "name": "Año Nuevo", "ambito": "estado" },
+        { "date": "2026-01-06", "name": "Epifanía del Señor", "ambito": "estado" },
+        { "date": "2026-04-02", "name": "Jueves Santo", "ambito": "estado" },
+        { "date": "2026-04-03", "name": "Viernes Santo", "ambito": "estado" },
+        { "date": "2026-05-01", "name": "Fiesta del Trabajo", "ambito": "estado" },
+        { "date": "2026-05-02", "name": "Fiesta de la Comunidad de Madrid", "ambito": "comunidad" },
+        { "date": "2026-05-15", "name": "San Isidro Labrador", "ambito": "pueblo" },
+        { "date": "2026-08-15", "name": "Asunción de la Virgen", "ambito": "estado" },
+        { "date": "2026-10-12", "name": "Fiesta Nacional de España", "ambito": "estado" },
+        { "date": "2026-11-02", "name": "Traslado de Todos los Santos", "ambito": "estado" },
+        { "date": "2026-11-09", "name": "Nuestra Señora de la Almudena", "ambito": "pueblo" },
+        { "date": "2026-12-07", "name": "Traslado del Día de la Constitución Española", "ambito": "estado" },
+        { "date": "2026-12-08", "name": "Inmaculada Concepción", "ambito": "estado" },
+        { "date": "2026-12-25", "name": "Natividad del Señor", "ambito": "estado" }
+    ]
+}
